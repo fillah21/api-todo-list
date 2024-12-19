@@ -29,4 +29,5 @@ Route::group([
 
 Route::middleware('auth:api')->group(function () {
     Route::apiResource('checklist', Ctrl\ChecklistController::class);   
+    Route::apiResource('todo', Ctrl\TodoController::class);   
 });

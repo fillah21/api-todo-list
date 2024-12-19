@@ -25,3 +25,8 @@ Route::group([
     Route::post('register', [Ctrl\AuthController::class, 'register'])->name('auth.register');
     Route::post('login', [Ctrl\AuthController::class, 'login'])->name('auth.login');
 });
+
+
+Route::middleware('auth:api')->group(function () {
+    Route::apiResource('checklist', Ctrl\ChecklistController::class);   
+});

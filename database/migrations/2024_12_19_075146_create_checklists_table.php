@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('checklists', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('user_id');
-            $table->string('checlist_name');
-            $table->text('description');
+            $table->string('checklist_name');
+            $table->text('description')->nullable();
 
             $table->foreign('user_id')->references('id')->on('users');
 

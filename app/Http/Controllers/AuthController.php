@@ -21,7 +21,7 @@ class AuthController extends Controller
         $token = AuthUser::login($user);
 
         return response()->json([
-            'status_code' => '200',
+            'status_code' => 200,
             'message' => 'User registration is successfull',
             'data' => [
                 'token' => $token
@@ -37,7 +37,7 @@ class AuthController extends Controller
         }
 
         return response()->json([
-            'status_code' => '200',
+            'status_code' => 200,
             'message' => 'Login is successfull',
             'data' => [
                 'token' => $token

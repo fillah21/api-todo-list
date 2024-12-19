@@ -53,7 +53,13 @@ class ChecklistController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $checklist = Checklist::where('id', $id)->with(['user', 'todo'])->first();
+
+        return response()->json([
+            'status_code' => 200,
+            'message' => "Detail checklis successfull show",
+            'data' => $checklist,
+        ]);
     }
 
     /**
